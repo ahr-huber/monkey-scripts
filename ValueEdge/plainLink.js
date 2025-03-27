@@ -3,6 +3,7 @@
 // @namespace    https://github.com/ahr-huber/monkey-scripts/
 // @version      2025-03-27
 // @description  Adds a plain <a> tag to the link popup.
+// @license      MIT
 // @author       Andreas Huber
 // @match        https://*.saas.microfocus.com/*
 // @grant        none
