@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ValueEdge: Add Plain Link
 // @namespace    https://github.com/ahr-huber/monkey-scripts/
-// @version      2025-03-27.2
+// @version      2025-04-01
 // @description  Adds a plain <a> tag to the link popup.
 // @license      MIT
 // @author       Andreas Huber
@@ -40,7 +40,9 @@
             a.setAttribute("href", href);
             a.setAttribute("title", href);
             a.addEventListener("mouseup", () => {
-                document.querySelector(".fr-popup.fr-active").classList.remove("fr-active"); // close popup
+                if (e.buttons[1]){
+                    document.querySelector(".fr-popup.fr-active").classList.remove("fr-active"); // close popup
+                }
             });
             document.querySelector(".fr-buttons").appendChild(a);
         }
