@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Follow Tickets
+// @name         ValueEdge: Follow Tickets
 // @namespace    https://github.com/ahr-huber/monkey-scripts/
 // @version      2025-11-03
 // @description  Automatically follow tickets when you add comments or click the save button
