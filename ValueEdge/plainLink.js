@@ -16,15 +16,16 @@
 
     function openLinkInNewWindow(){
         const description = document.querySelector(".fr-wrapper");
-        if(description == null){
-            window.setTimeout(()=>{openLinkInNewWindow()}, 500);
-        }else{
+        if(description != null) {
             const links = document.querySelectorAll(".fr-wrapper a");
             links.forEach((link) =>{
-                link.addEventListener("click", () =>{
-                    document.querySelectorAll(".fr-buttons a").forEach(a => a.remove());
-                    _addPlainLinkToButtons(link.getAttribute("href"));
-                });
+                if (link.getAttribute("data-tamper-plainlink") !== "true") {
+                    link.addEventListener("click", () =>{
+                        document.querySelectorAll(".fr-buttons a").forEach(a => a.remove());
+                        _addPlainLinkToButtons(link.getAttribute("href"));
+                    });
+                    link.setAttribute("data-tamper-plainlink", "true");
+                }
             });
         }
     }
@@ -39,7 +40,7 @@
             a.textContent = "plain";
             a.setAttribute("href", href);
             a.setAttribute("title", href);
-            a.addEventListener("mouseup", () => {
+            a.addEventListener("mouseup", (e) => {
                 if (e.buttons[1]){
                     document.querySelector(".fr-popup.fr-active").classList.remove("fr-active"); // close popup
                 }
@@ -48,5 +49,8 @@
         }
     }
 
-    openLinkInNewWindow();
+     window.setInterval(()=>{
+         openLinkInNewWindow();
+     }, 500);
+
 })();
