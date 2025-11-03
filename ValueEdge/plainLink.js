@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ValueEdge: Add Plain Link
 // @namespace    https://github.com/ahr-huber/monkey-scripts/
-// @version      2025-04-01
+// @version      2025-11-03
 // @description  Adds a plain <a> tag to the link popup.
 // @license      MIT
 // @author       Andreas Huber
