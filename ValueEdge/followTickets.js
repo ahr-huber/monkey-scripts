@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ValueEdge: Follow Tickets
 // @namespace    https://github.com/ahr-huber/monkey-scripts/
-// @version      2025-11-03
+// @version      2025-11-04
 // @description  Automatically follow tickets when you add comments or click the save button
 // @license      MIT
 // @author       Andreas Huber
@@ -37,7 +37,7 @@
         if (element && element.getAttribute("data-tamper-click") == null) {
             element.addEventListener("click", handler);
             element.setAttribute("data-tamper-click", "true");
-            element.style.outline="1px dotted red";
+            //element.style.outline="1px dotted red";
         }
     }
 
